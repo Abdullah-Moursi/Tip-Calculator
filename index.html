@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="main">
+        <h1>TIP CALCULATOR</h1> 
+
+        <div class="content">
+            <form class="input">
+                <p>How much was your bill?</p>
+                <label for="inp">$</label>
+                <input type="number"  pattern=" 0+\.[0-9]*[1-9][0-9]*$"  placeholder="Bill Amount" name="inp" id="bill">
+            </form>
+
+            <form class="input">
+                <p>How was your service?</p>
+                <label for="services">&NonBreakingSpace; &nbsp</label>
+                  <select name="services" id="serv">
+                    <option id="def" value="none" selected disabled hidden> 
+                        Choose an Option 
+                    </option>
+                    <option id="def"  value="thirty">30% Outstanding</option>
+                    <option id="def"  value="twenty">20% Good</option>
+                    <option id="def"  value="fifteen">15% It was OK</option>
+                    <option id="def"  value="ten">10% Bad</option>
+                    <option id="def"  value="five">&nbsp 5% Terrible</option>
+                    <option id="def"  value="zero">None!</option>
+                  </select>           
+            </form>
+
+            <form class="input">
+                <p>How many people are sharing the bill?</p>
+                <label for="inp"> &nbsp</label>
+                <input type="number"  pattern=" 0+\.[0-9]*[1-9][0-9]*$" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');"  placeholder="Number of People" name="inp" id="numb">
+                <label for="inp">People</label>
+            </form>
+
+            <button id="calc"  onclick="tips()" type="button" >CALCULATE!</button>
+
+            <div class="result"></div>
+
+        </div>
+    </div>
+
+
+    <script src="app.js" ></script>
+</body>
+</html>
